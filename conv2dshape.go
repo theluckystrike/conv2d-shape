@@ -8,6 +8,13 @@
 // input/kernel/stride combinations, with PyTorch code, are at
 // https://heytensor.com/answers/conv2d-output-112x112-kernel-3-stride-2.html
 // and the sibling pages linked from there.
+//
+// Params covers a single Conv2d layer in isolation. To compose the per-layer
+// counts this package returns into a whole-network parameter, FLOPs and
+// memory total - mixing Conv2D with Dense, LSTM and multi-head attention
+// layers, and checking the result against ResNet, VGG, BERT and GPT
+// baselines - see
+// https://ml0x.com/tools/model-complexity-calculator.html
 package conv2dshape
 
 // Output returns the output spatial size of a single Conv2d dimension
